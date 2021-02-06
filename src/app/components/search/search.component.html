@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-2 text-right">
+            <label for="search" class="form-label pt-2">Busqueda:</label>
+        </div>
+        <div class="col-8">
+            <input [(ngModel)]="busqueda" type="text" class="form-control" id="search" placeholder="Godzilla...">
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary w-100" (click)="buscar()">Buscar</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 mt-2" *ngFor="let item of resultados">
+            <div class="card">
+                <img *ngIf="item.Poster != 'N/A'" [src]="item.Poster" class="card-img-top" [alt]="item.Title">
+                <img *ngIf="item.Poster == 'N/A'" src="https://www.fourtechservices.com/Modules/eCommerce/images/default-img.png" class="card-img-top" [alt]="item.Title">
+                <div class="card-body">
+                    <h3 class="card-title">{{ item.Title }}</h3>
+                    <p class="card-text">Año: {{ item.Year }}</p>
+                    <button class="btn btn-primary" (click)="detalle(item.imdbID)">Ver detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

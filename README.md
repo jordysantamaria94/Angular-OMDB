@@ -1,27 +1,32 @@
-# MovieOmdb
+# Catalogo de Series y Peliculas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Bienvenido a la aplicación de Series y Peliculas creada con Angular 11.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Usa [npm](https://nodejs.org/es/) para instalar las dependencias del proyecto.
 
-## Code scaffolding
+```bash
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+Solicita una API Key en la pagina de [OMDB](http://www.omdbapi.com/apikey.aspx) e insertala en el archivo de enviroments.prod.ts y enviroments.ts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```typescript
+export const environment = {
+  production: ...,
+  keyOMDB: _YOUR_KEY_,
+};
+```
 
-## Running unit tests
+## Credits
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aplicación desarrollada por [Jordy Santamaria](https://www.jordysantamaria.com/)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Redes Sociales
+[Twitter](https://twitter.com/jordysantm) \
+[Twitch](https://www.twitch.tv/jsgames18) \
+[YouTube - JSCode](https://www.youtube.com/channel/UCyF_ych9Hy2oL8i_mj1kIXA) \
+[YouTube - JSGames](https://www.youtube.com/channel/UC4kAwepESweVcXwmvUW3e0A)
