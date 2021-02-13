@@ -22,7 +22,6 @@ export class HomePage {
   }
 
   detail(id: string) {
-    console.log(id);
     this.router.navigate(['/detail', id]);
   }
 

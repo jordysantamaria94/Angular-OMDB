@@ -1,0 +1,99 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home"></ion-back-button>
+    <h1 *ngIf="detail">
+      {{ detail.Title }}
+    </h1>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" *ngIf="detail">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-img *ngIf="detail.Poster != 'N/A'" [src]="detail.Poster" [alt]="detail.Title"></ion-img>
+        <ion-img *ngIf="detail.Poster == 'N/A'" src="http://www.pacifil.com/public/assets/img/sustainability/placeholder-img-3.jpg" [alt]="detail.Title"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment value="overview" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="overview">
+      <ion-label>Overview</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="awards">
+      <ion-label>Awards</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="ratings">
+      <ion-label>Ratings</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngIf="tabSelected == 'overview'" size="12">
+
+        <p>
+          <span class="font-bold">
+            Released: 
+          </span>
+          {{ detail.Released }}
+        </p>
+
+        <p>
+          <span class="font-bold">
+            Genrers: 
+          </span>
+          {{ detail.Genre }}
+        </p>
+
+        <p>
+          <span class="font-bold">
+            Plot: 
+          </span>
+          {{ detail.Plot }}
+        </p>
+
+        <p>
+          <span class="font-bold">
+            Actors: 
+          </span>
+          {{ detail.Actors }}
+        </p>
+
+        <p>
+          <span class="font-bold">
+            Writers: 
+          </span>
+          {{ detail.Writer }}
+        </p>
+
+      </ion-col>
+      <ion-col *ngIf="tabSelected == 'awards'" size="12">
+        <p>
+          <span class="font-bold">
+            Awards and Nominations:
+          </span> 
+          {{ detail.Awards }}
+        </p>
+      </ion-col>
+      <ion-col *ngIf="tabSelected == 'ratings'" size="12">
+        <p>
+          <span class="font-bold">
+            IMDB Rating:
+          </span> 
+          {{ detail.imdbRating }}
+        </p>
+        <div *ngFor="let item of detail.Ratings">
+          <p>
+            <span class="font-bold">
+              {{ item.Source }}: 
+            </span>
+            {{ item.Value }}
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

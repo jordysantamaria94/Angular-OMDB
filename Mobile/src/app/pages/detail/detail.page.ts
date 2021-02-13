@@ -10,6 +10,7 @@ import { OmdbService } from 'src/app/services/omdb.service';
 export class DetailPage implements OnInit {
 
   detail: any;
+  tabSelected: string = "overview";
 
   constructor(private router: ActivatedRoute, private serviceOmdb: OmdbService, private route: Router) {}
 
@@ -23,13 +24,12 @@ export class DetailPage implements OnInit {
     
     await this.serviceOmdb.getDetailMovie(id)
       .subscribe(response => {
-        console.log(response);
         this.detail = response;
       });
   }
 
-  volver() {
-    this.route.navigate(['/search']);
+  segmentChanged(ev: any) {
+    this.tabSelected = ev.detail.value;
   }
 
 }
