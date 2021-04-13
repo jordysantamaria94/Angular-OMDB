@@ -10,40 +10,24 @@
         </div>
         <div class="col-8">
             <h1 class="display-1">{{ detail.Title }}</h1>
-            <p>
-                <strong>Genrers: </strong> 
-                {{ detail.Genre }}
-            </p>
-            <p>
-                <strong>Awards: </strong>
-                {{ detail.Awards }}
-            </p>
-            <p>
-                <strong>Description: </strong>
-                {{ detail.Plot }}
-            </p>
-            <p>
-                <strong>Writers: </strong>
-                {{ detail.Writer }}
-            </p>
-            <p>
-                <strong>Actors: </strong> 
-                {{ detail.Actors }}
-            </p>
-            <p>
-                <strong>Released: </strong> 
-                {{ detail.Released }}
-            </p>
-            <p>
-                <strong>IMDB Rating: </strong> 
-                {{ detail.imdbRating }}
-            </p>
-            <span *ngFor="let item of detail.Ratings">
-                <p>
-                    <strong>{{ item.Source }}: </strong>
-                    {{ item.Value }}
-                </p>
-            </span>
+
+            <app-label-description [title]="'Genrers'" [description]="detail.Genre" ></app-label-description>
+
+            <app-label-description [title]="'Awards'" [description]="detail.Awards" ></app-label-description>
+
+            <app-label-description [title]="'Plot'" [description]="detail.Plot" ></app-label-description>
+
+            <app-label-description [title]="'Writers'" [description]="detail.Writer" ></app-label-description>
+
+            <app-label-description [title]="'Actors'" [description]="detail.Actors" ></app-label-description>
+
+            <app-label-description [title]="'Released'" [description]="detail.Released" ></app-label-description>
+
+            <app-label-description [title]="'IMDB Rating'" [description]="detail.imdbRating" ></app-label-description>
+            
+            <div *ngFor="let item of detail.Ratings">
+                <app-label-description [title]="item.Source" [description]="item.Value" ></app-label-description>
+            </div>
         </div>
     </div>
 </div>

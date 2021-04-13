@@ -1,0 +1,9 @@
+<div class="card">
+    <img *ngIf="item.Poster != 'N/A'" [src]="item.Poster" class="card-img-top" [alt]="item.Title">
+    <img *ngIf="item.Poster == 'N/A'" src="https://www.fourtechservices.com/Modules/eCommerce/images/default-img.png" class="card-img-top" [alt]="item.Title">
+    <div class="card-body">
+        <h3 class="card-title">{{ item.Title }}</h3>
+        <p class="card-text">Año: {{ item.Year }}</p>
+        <button class="btn btn-primary" (click)="detalle(item.imdbID)">Ver detalles</button>
+    </div>
+</div>

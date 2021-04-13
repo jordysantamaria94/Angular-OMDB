@@ -1,0 +1,9 @@
+cd /C/Program\ Files/Java/jdk1.8.0_281/bin/
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\xampp\htdocs\enviroments\Personal\Angular-OMDB\APK\android-key.jks C:\xampp\htdocs\enviroments\Personal\Angular-OMDB\APK\app-release-unsigned.apk mykey
+
+PASSWORD: barcelona1994
+
+cd /C/Users/MAGICA-5/AppData/Local/Android/Sdk/build-tools/30.0.3/
+
+./zipalign -v 4 /C/xampp/htdocs/enviroments/Personal/Angular-OMDB/APK/app-release-unsigned.apk C:/xampp/htdocs/enviroments/Personal/Angular-OMDB/APK/omdb.apk
